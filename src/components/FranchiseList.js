@@ -1,8 +1,18 @@
 import React from 'react'
 
-function FranchiseList() {
+// components
+import Franchise from "./Franchise"
+
+function FranchiseList({franchises}) {
+  
+  const franchisesToRender = franchises.map(franchise => (<Franchise franchise={franchise} key={franchise.id}/>))
+  
   return (
-    <div>FranchiseList</div>
+    <div>
+      <h2>YOUR SERIES</h2>
+      <br/>
+      {franchisesToRender}
+    </div>
   )
 }
 

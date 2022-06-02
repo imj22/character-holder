@@ -1,9 +1,19 @@
 import React from 'react'
 
-function MediaList() {
+// components
+import Media from "./Media"
+
+function MediaList({medias}) {
+  
+  const mediasToRender = medias.map(media => (<Media media={media} key={media.id} />))
+  
   return (
-    <div>MediaList</div>
+    <div>
+      <h2>YOUR FAVORITE MEDIA:</h2>
+      <br/>
+      {mediasToRender}
+    </div>
   )
 }
 
-export default MediaList
+export default MediaList;

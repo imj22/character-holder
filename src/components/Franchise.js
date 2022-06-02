@@ -1,8 +1,12 @@
 import React from 'react'
 
-function Franchise() {
+function Franchise({franchise, franchise: {title}}) {
   return (
-    <div>Franchise</div>
+    <div>
+      <h3>{title}</h3>
+      <p>{franchise.medias[0].title}</p>
+      <br />
+    </div>
   )
 }
 
