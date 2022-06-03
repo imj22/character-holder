@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 function UpdateFranchisesForm({franchises, updateFranchise}) {
     const [franchiseOption, setFranchiseOption] = useState("")
     const [updatedFranchiseTitle, setUpdatedFranchiseTitle] = useState("")
-    const [id, setId] = useState("")
+
 
     const franchiseOptions = franchises.map(franchise => {
             return (
@@ -12,49 +12,35 @@ function UpdateFranchisesForm({franchises, updateFranchise}) {
         }
     )
 
-
-    const changeSetId = () => {
-        const selectedFranchise = franchises.filter(franchise => franchise.title === franchiseOption)
-        console.log(selectedFranchise)
-    }
-
-    const handleChange = (e) => {
-        setFranchiseOption(e.target.value)
-        // console.log("id:" , id)
-    }
-    
-    
     // franchises.map(franchise => franchise.title === franchiseOption ? setId(franchise.id) : console.log("no"))
 
     const handleUpdatedFranchiseSubmit = (e) => {
         e.preventDefault();
 
-        
-        // console.log(selectedFranchise)
-        // setId(selectedFranchise.find(franchise => franchise.id))
+         const selectedFranchise = franchises.filter(franchise => franchise.title === franchiseOption)
 
-        console.log("ID:", id)
+         const id = selectedFranchise[0].id
 
-        // const updatedFranchise = {
-        //     title: updatedFranchiseTitle
-        // }
+        const updatedFranchise = {
+            title: updatedFranchiseTitle
+        }
 
-        // fetch(`http://localhost:9292/franchises/${id}`, {
-        //     method: "PATCH", 
-        //     headers: {
-        //         "Content-Type" : "application/json",
-        //     }, 
-        //     body: JSON.stringify(updatedFranchise),
-        // })
-        //     .then(r => r.json())
-        //     .then(updatedFranchise => console.log(updatedFranchise))
+        fetch(`http://localhost:9292/franchises/${id}`, {
+            method: "PATCH", 
+            headers: {
+                "Content-Type" : "application/json",
+            }, 
+            body: JSON.stringify(updatedFranchise),
+        })
+            .then(r => r.json())
+            .then(updatedFranchise => updateFranchise(updatedFranchise))
     }
 
 
   return (
     <div>UpdateFranchisesForm
         <form onSubmit={e => handleUpdatedFranchiseSubmit(e)}>
-            <select value={franchiseOption} onChange={e => handleChange(e)}>
+            <select value={franchiseOption} onChange={e => setFranchiseOption(e.target.value)}>
                 <option placeholder="chose franchise to update..."></option>
                 {franchiseOptions}
             </select>

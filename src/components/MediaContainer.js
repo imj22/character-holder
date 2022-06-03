@@ -1,8 +1,13 @@
 import React from 'react'
 
-function MediaContainer() {
+// components
+import MediaList from "./MediaList"; 
+
+function MediaContainer({medias}) {
   return (
-    <div>MediaContainer</div>
+    <div>MediaContainer
+      <MediaList medias={medias}/>
+    </div>
   )
 }
 
