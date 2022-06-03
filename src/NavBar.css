@@ -1,0 +1,10 @@
+.navLink {
+
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.NavBar {
+    background-color: pink;
+}

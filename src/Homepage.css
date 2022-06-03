@@ -1,0 +1,12 @@
+img {
+    max-width: 50%; 
+    height:auto;
+    align:center;
+}
+
+button {
+    border: 30px;
+    font-size: 18px;
+    display: inline-block;
+    margin: 1px
+}

@@ -59,9 +59,9 @@ function App() {
         <NavBar />
        <Routes>
           <Route path="/" element={<Homepage />}/>
-          <Route path="characters" element={<CharacterContainer characters={characters}/>}/>
-          <Route path="medias" element={<MediaContainer medias={medias}/>}/> 
-          <Route path="franchises" element={<FranchiseContainer franchises={franchises} addNewFranchise={addNewFranchise} removeFranchise={removeFranchise} updateFranchise={updateFranchise}/>}/> 
+          <Route path="/characters" element={<CharacterContainer characters={characters}/>}/>
+          <Route path="/medias" element={<MediaContainer medias={medias}/>}/> 
+          <Route path="/franchises" element={<FranchiseContainer franchises={franchises} addNewFranchise={addNewFranchise} removeFranchise={removeFranchise} updateFranchise={updateFranchise}/>}/> 
         </Routes>
       </header>
     </div>
