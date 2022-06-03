@@ -1,7 +1,8 @@
 import React from 'react'
 
 function Franchise({franchise, franchise: {id, title}, removeFranchise}) {
-  // const renderMediaTitle = franchise.medias[0].title === undefined? (<p>You have not saved media from {franchise}.</p>) : (<p>{franchise.medias[0].title}</p>)
+  const renderMediaTitle = franchise.medias.length === 0 ? `You have not saved media from ${franchise.title}` : franchise.medias[0].title
+  // debugger;
 
   const handleDeleteClick = (e) => {
     fetch(`http://localhost:9292/franchises/${id}`, {
@@ -15,6 +16,7 @@ function Franchise({franchise, franchise: {id, title}, removeFranchise}) {
   return (
     <div>
       <h3>{title}</h3>
+      <p><i>{renderMediaTitle}</i></p>
       {/* {renderMediaTitle} */}
       <button onClick={e => handleDeleteClick(e)}>X</button>
       <br />

@@ -1,13 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
 function UpdateFranchisesForm({franchises, updateFranchise}) {
     const [franchiseOption, setFranchiseOption] = useState("")
     const [updatedFranchiseTitle, setUpdatedFranchiseTitle] = useState("")
 
-
     const franchiseOptions = franchises.map(franchise => {
             return (
-                <option>{franchise.title}</option>
+                <option key={franchise.title}>{franchise.title}</option>
             )
         }
     )

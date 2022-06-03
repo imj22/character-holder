@@ -4,15 +4,14 @@ function NewFranchiseForm({addNewFranchise}) {
     // const baseUrl = "http://localhost:9292"
   const [newFranchiseTitle, setNewFranchiseTitle] = useState("")
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
         e.preventDefault();
 
       const newFranchise = {
           title: newFranchiseTitle, 
           medias: []
         }
-        
-        fetch("http://localhost:9292/franchises", {
+        await fetch("http://localhost:9292/franchises", {
             method: "POST", 
             headers: {
                 "Content-Type" : "application/json",
@@ -22,7 +21,7 @@ function NewFranchiseForm({addNewFranchise}) {
             .then(r => r.json())
             .then(newFranchiseData => addNewFranchise(newFranchiseData))
     }
-  
+
     return (
     <div>NewFranchiseForm
         <form onSubmit={e => handleFormSubmit(e)}>
@@ -36,7 +35,6 @@ function NewFranchiseForm({addNewFranchise}) {
                     placeholder="type new franchise title..."
                 ></input>
             </label>
-          
             <input type="submit"></input>
         </form>
     </div>

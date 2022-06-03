@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 import NewFranchiseForm from "./NewFranchiseForm"; 
 import UpdateFranchisesForm from "./UpdateFranchisesForm";
 
-function FranchiseForm({franchises, addFranchise, updateFranchise}) {
+function FranchiseForm({franchises, addNewFranchise, updateFranchise}) {
   const [isNewRendered, setIsNewRendered] = useState(false)
   const [isUpdateRendered, setIsUpdateRendered] = useState(false)
 
@@ -22,7 +22,7 @@ function FranchiseForm({franchises, addFranchise, updateFranchise}) {
       <button value="update" onClick={e => handleUpdateFormClick(e)}>update franchises</button>
       <button value="new" onClick={e => handleNewFormClick(e)}>create new franchise</button>
       {isNewRendered && (
-        <NewFranchiseForm addFranchise={addFranchise}/>
+        <NewFranchiseForm addNewFranchise={addNewFranchise}/>
       )}
       {isUpdateRendered && (
         <UpdateFranchisesForm franchises={franchises} updateFranchise={updateFranchise}/>
