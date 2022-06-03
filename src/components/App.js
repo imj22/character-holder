@@ -36,6 +36,22 @@ function App() {
       .then(mediaData => setMedias(mediaData))
   }, [])
 
+  const addNewFranchise = (newFranchise) => {
+    const updatedFranchises = [...franchises, newFranchise]
+    setFranchises(updatedFranchises)
+  }
+
+  const removeFranchise = (deletedFranchise) => {
+    const updatedFranchises = franchises.filter(franchise => franchise !== deletedFranchise)
+    setFranchises(updatedFranchises)
+  }
+
+ const updateFranchise = (updatedFranchise) => {
+    const updatedFranchises = franchises.map(franchise => franchise.id === updatedFranchise.id ? updatedFranchise : franchise)
+    setFranchises(updatedFranchises)
+
+ }
+
 
   return (
     <div className="App">
@@ -45,7 +61,7 @@ function App() {
           <Route path="/" element={<Homepage />}/>
           <Route path="characters" element={<CharacterContainer characters={characters}/>}/>
           <Route path="medias" element={<MediaContainer medias={medias}/>}/> 
-          <Route path="franchises" element={<FranchiseContainer franchises={franchises}/>}/> 
+          <Route path="franchises" element={<FranchiseContainer franchises={franchises} addNewFranchise={addNewFranchise} removeFranchise={removeFranchise} updateFranchise={updateFranchise}/>}/> 
         </Routes>
       </header>
     </div>

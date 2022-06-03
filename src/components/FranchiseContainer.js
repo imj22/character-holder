@@ -1,14 +1,14 @@
 import React from 'react'
 
 // components
-import NewFranchiseForm from "./NewFranchiseForm"; 
+import FranchiseForm from "./FranchiseForm"; 
 import FranchiseList from "./FranchiseList"
 
-function FranchiseContainer({franchises}) {
+function FranchiseContainer({franchises, addNewFranchise, removeFranchise, updateFranchise}) {
   return (
     <div>FranchiseContainer
-        <FranchiseList franchises ={franchises}/>
-        <NewFranchiseForm franchises ={franchises}/>
+        <FranchiseList franchises ={franchises} removeFranchise={removeFranchise}/>
+        <FranchiseForm franchises ={franchises} addNewFranchise={addNewFranchise} updateFranchise={updateFranchise}/>
     </div>
   )
 }

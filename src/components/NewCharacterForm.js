@@ -2,7 +2,11 @@ import React from 'react'
 
 function NewCharacterForm() {
   return (
-    <div>NewCharacterForm</div>
+    <div>NewCharacterForm
+      <form>
+        <input type="text"></input>
+      </form>
+    </div>
   )
 }
 
