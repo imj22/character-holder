@@ -23,7 +23,7 @@ function NewFranchiseForm({addNewFranchise}) {
     }
 
     return (
-    <div>NewFranchiseForm
+    <div>
         <form onSubmit={e => handleFormSubmit(e)}>
             <label>
                 

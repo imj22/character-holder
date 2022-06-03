@@ -5,7 +5,7 @@ import MediaList from "./MediaList";
 
 function MediaContainer({medias}) {
   return (
-    <div>MediaContainer
+    <div>
       <MediaList medias={medias}/>
     </div>
   )

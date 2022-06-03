@@ -37,7 +37,7 @@ function UpdateFranchisesForm({franchises, updateFranchise}) {
 
 
   return (
-    <div>UpdateFranchisesForm
+    <div>
         <form onSubmit={e => handleUpdatedFranchiseSubmit(e)}>
             <select value={franchiseOption} onChange={e => setFranchiseOption(e.target.value)}>
                 <option placeholder="chose franchise to update..."></option>

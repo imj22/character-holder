@@ -9,7 +9,7 @@ function FranchiseList({franchises, removeFranchise}) {
   
   return (
     <div>
-      <h2>YOUR SERIES</h2>
+      <h2>YOUR FAVORITE SERIES</h2>
       <br/>
       {franchisesToRender}
     </div>
