@@ -15,7 +15,7 @@ function Character({character, character:{name, organization, allies, descriptio
       <p>Allies: {allies}</p>
       <p>Character Description: {description}</p>
       {/* {quotesToRender} */}
-      <p>{quoteObj.quote_content}</p>
+      <p><i>"{quoteObj.quote_content}"</i></p>
       <br/>
     </div>
   )

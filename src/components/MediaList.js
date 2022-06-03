@@ -9,7 +9,7 @@ function MediaList({medias}) {
   
   return (
     <div>
-      <h2>YOUR FAVORITE MEDIA:</h2>
+      <h2>YOUR FAVORITE MEDIA</h2>
       <br/>
       {mediasToRender}
     </div>
