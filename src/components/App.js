@@ -3,9 +3,9 @@ import React, {useState, useEffect} from "react";
 
 // components
 import Homepage from "./Homepage";
-import CharacterList from "./CharacterList";
-import MediaList from "./MediaList";
-import FranchiseList from "./FranchiseList"
+import CharacterContainer from "./CharacterContainer";
+import MediaContainer from "./MediaContainer";
+import FranchiseContainer from "./FranchiseContainer"
 import NavBar from "./NavBar"
 
 // navigation
@@ -43,9 +43,9 @@ function App() {
         <NavBar />
        <Routes>
           <Route path="/" element={<Homepage />}/>
-          <Route path="characters" element={<CharacterList characters={characters}/>}/>
-          <Route path="medias" element={<MediaList medias={medias}/>}/> 
-          <Route path="franchises" element={<FranchiseList franchises={franchises}/>}/> 
+          <Route path="characters" element={<CharacterContainer characters={characters}/>}/>
+          <Route path="medias" element={<MediaContainer medias={medias}/>}/> 
+          <Route path="franchises" element={<FranchiseContainer franchises={franchises}/>}/> 
         </Routes>
       </header>
     </div>
