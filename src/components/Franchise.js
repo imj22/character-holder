@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Franchise({franchise, franchise: {id, title}, removeFranchise}) {
-  const renderMediaTitle = franchise.medias.length === 0 ? `You have not saved media from ${franchise.title}` : franchise.medias[0].title
+  // const renderMediaTitle = franchise.medias.length === 0 ? `You have not saved media from ${franchise.title}` : franchise.medias[0].title
   // debugger;
 
   const handleDeleteClick = (e) => {
@@ -16,8 +16,7 @@ function Franchise({franchise, franchise: {id, title}, removeFranchise}) {
   return (
     <div>
       <h3>{title}</h3>
-      <p><i>{renderMediaTitle}</i></p>
-      {/* {renderMediaTitle} */}
+      {/* <p><i>{renderMediaTitle}</i></p> */}
       <button onClick={e => handleDeleteClick(e)}>X</button>
       <br />
     </div>

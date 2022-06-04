@@ -20,9 +20,9 @@ function UpdateFranchisesForm({franchises, updateFranchise}) {
 
          const id = selectedFranchise[0].id
 
-        const updatedFranchise = {
-            title: updatedFranchiseTitle
-        }
+            const updatedFranchise = {
+                title: updatedFranchiseTitle
+            }
 
         fetch(`http://localhost:9292/franchises/${id}`, {
             method: "PATCH", 

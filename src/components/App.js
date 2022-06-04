@@ -10,6 +10,7 @@ import NavBar from "./NavBar"
 
 // navigation
 import {Routes, Route} from "react-router-dom"
+import MainContainer from './MainContainer';
 
 function App() {
   const [characters, setCharacters] = useState([])
@@ -49,19 +50,21 @@ function App() {
  const updateFranchise = (updatedFranchise) => {
     const updatedFranchises = franchises.map(franchise => franchise.id === updatedFranchise.id ? updatedFranchise : franchise)
     setFranchises(updatedFranchises)
+  }
 
- }
+
 
 
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar />
        <Routes>
           <Route path="/" element={<Homepage />}/>
-          <Route path="/characters" element={<CharacterContainer characters={characters}/>}/>
-          <Route path="/medias" element={<MediaContainer medias={medias}/>}/> 
-          <Route path="/franchises" element={<FranchiseContainer franchises={franchises} addNewFranchise={addNewFranchise} removeFranchise={removeFranchise} updateFranchise={updateFranchise}/>}/> 
+          <Route path="main" element={<MainContainer/>}>
+              <Route path="characters" element={<CharacterContainer characters={characters}/>}/>
+              <Route path="medias" element={<MediaContainer medias={medias}/>}/> 
+              <Route path="franchises" element={<FranchiseContainer franchises={franchises} addNewFranchise={addNewFranchise} removeFranchise={removeFranchise} updateFranchise={updateFranchise}/>}/> 
+          </Route>
         </Routes>
       </header>
     </div>
