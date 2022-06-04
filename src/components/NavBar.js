@@ -14,6 +14,7 @@ function NavBar() {
       <NavLink to="characters" className="navLink">Characters</NavLink>
       <NavLink to="medias" className="navLink">Medias</NavLink>
       <NavLink to="franchises" className="navLink">Franchises</NavLink>
+      <NavLink to="new" className="navLink">Alter?</NavLink>
     </div>
   )
 }
